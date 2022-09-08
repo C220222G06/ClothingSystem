@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingSystem.LogicaDeNego
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingSystem.UI.AppWebAspCore", "ClothingSystem.UI.AppWebAspCore\ClothingSystem.UI.AppWebAspCore.csproj", "{25EF1F9D-D885-4867-A0D8-2CF929831DDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingSystem.PruebasUnitarias", "ClothingSystem.PruebasUnitarias\ClothingSystem.PruebasUnitarias.csproj", "{B1ED124E-B61D-481B-8243-84F4769FE93C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingSystem.PruebasUnitarias", "ClothingSystem.PruebasUnitarias\ClothingSystem.PruebasUnitarias.csproj", "{B1ED124E-B61D-481B-8243-84F4769FE93C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingSystem.WebAPI", "ClothingSystem.WebAPI\ClothingSystem.WebAPI.csproj", "{F5C49806-0DC5-4110-B678-8F6AC90765DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B1ED124E-B61D-481B-8243-84F4769FE93C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1ED124E-B61D-481B-8243-84F4769FE93C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1ED124E-B61D-481B-8243-84F4769FE93C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5C49806-0DC5-4110-B678-8F6AC90765DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C49806-0DC5-4110-B678-8F6AC90765DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C49806-0DC5-4110-B678-8F6AC90765DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C49806-0DC5-4110-B678-8F6AC90765DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
