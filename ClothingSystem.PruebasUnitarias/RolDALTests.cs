@@ -66,17 +66,5 @@ namespace ClothingSystem.AccesoADatos.Tests
             int result = await RolDAL.EliminarAsync(rol);
             Assert.AreNotEqual(0, result);
         }
-
-        [TestMethod()]
-        public void ObtenerTodosAsyncTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void BuscarAsyncTest()
-        {
-            Assert.Fail();
-        }
     }
 }
