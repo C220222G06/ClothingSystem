@@ -146,6 +146,7 @@ namespace ClothingSystem.AccesoADatos
                 select = QuerySelect(select, pUsuario).Include(s => s.Rol).AsQueryable();
                 usuarios = await select.ToListAsync();
             }
+
             return usuarios;
         }
         public static async Task<Usuario> LoginAsync(Usuario pUsuario)
