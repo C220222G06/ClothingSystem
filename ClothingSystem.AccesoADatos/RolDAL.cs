@@ -26,8 +26,9 @@ namespace ClothingSystem.AccesoADatos
             using (var bdContexto = new BDContexto())
             {
                 var rol = await bdContexto.Rol.FirstOrDefaultAsync(s => s.Id == pRol.Id);
-                rol.Nombre = pRol.Nombre;
-                bdContexto.Update(rol);
+                Rol prol = new Rol();
+//                rol.Nombre = pRol.Nombre;
+//                bdContexto.Update(rol);
                 result = await bdContexto.SaveChangesAsync();
             }
             return result;
