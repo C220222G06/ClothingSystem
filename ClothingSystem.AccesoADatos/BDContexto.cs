@@ -14,8 +14,8 @@ namespace ClothingSystem.AccesoADatos
         public DbSet<Usuario> Usuario { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-OOE8CFG\SQLEXPRESS;Initial Catalog=ClothingSystemdb;Integrated Security=True");
-           optionsBuilder.UseSqlServer(@"Data Source=MABA\SQLEXPRESS;Initial Catalog=ClothingSystemdb;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-OOE8CFG\SQLEXPRESS;Initial Catalog=ClothingSystemdb;Integrated Security=True");
+          // optionsBuilder.UseSqlServer(@"Data Source=MABA\SQLEXPRESS;Initial Catalog=ClothingSystemdb;Integrated Security=True");
         }
     }
 }
