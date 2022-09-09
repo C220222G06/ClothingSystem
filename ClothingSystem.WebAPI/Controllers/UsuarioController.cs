@@ -11,7 +11,7 @@ using System.Text.Json;
 using ClothingSystem.EntidadesDeNegocio;
 using ClothingSystem.LogicaDeNegocio;
 using ClothingSystem.WebAPI.Auth;
-// ***************************************************
+// ****************************************************
 
 namespace ClothingSystem.WebAPI.Controllers
 {
