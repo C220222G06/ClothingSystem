@@ -1,13 +1,15 @@
-﻿using ClothingSystem.EntidadesDeNegocio;
-using ClothingSystem.LogicaDeNegocio;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+// Agregar la siguiente librerias
+using ClothingSystem.EntidadesDeNegocio;
+using ClothingSystem.LogicaDeNegocio;
 using System.Text.Json;
-
-// Agregar la siguiente libreria para la seguridad JWT
 using Microsoft.AspNetCore.Authorization;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ClothingSystem.WebAPI.Controllers
 {
@@ -94,6 +96,5 @@ namespace ClothingSystem.WebAPI.Controllers
             return await rolBL.BuscarAsync(rol);
 
         }
-
     }
 }
