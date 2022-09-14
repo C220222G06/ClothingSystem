@@ -28,6 +28,7 @@ namespace ClothingSystem.AccesoADatos
             using (var bdContexto = new BDContexto())
             {
                 var ropafoto = await bdContexto.RopaFoto.FirstOrDefaultAsync(s => s.Id == pRopaFoto.Id);
+                ropafoto.IdRopa = pRopaFoto.IdRopa;
                 RopaFoto propafoto = new RopaFoto();
                 ropafoto.Url = pRopaFoto.Url;
                 bdContexto.Update(ropafoto);
@@ -72,7 +73,6 @@ namespace ClothingSystem.AccesoADatos
                 pQuery = pQuery.Where(s => s.IdRopa == pRopaFoto.IdRopa);
             if (!string.IsNullOrWhiteSpace(pRopaFoto.Url))
                 pQuery = pQuery.Where(s => s.Url.Contains(pRopaFoto.Url));
-            pQuery = pQuery.OrderByDescending(s => s.Id).AsQueryable();
             if (pRopaFoto.Estatus > 0)
                 pQuery = pQuery.Where(s => s.Estatus == pRopaFoto.Estatus);
             if (pRopaFoto.Top_Aux > 0)
