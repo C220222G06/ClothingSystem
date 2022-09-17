@@ -12,6 +12,7 @@ namespace ClothingSystem.AccesoADatos
     {
         public DbSet<Rol> Rol { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Marca> Marca { get; set; }
         public DbSet<Ropa> Ropa { get; set; }
         public DbSet<RopaFoto> RopaFoto { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
