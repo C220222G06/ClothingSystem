@@ -21,11 +21,11 @@ namespace ClothingSystem.EntidadesDeNegocio
 
         [Required(ErrorMessage = "CodigoBarra es obligatorio")]
         [StringLength(30, ErrorMessage = "Maximo 30 caracteres")]
-        public string CodigoBarra { get; set; }
+        public string? CodigoBarra { get; set; }
 
         [Required(ErrorMessage = "Nombre es obligatorio")]
         [StringLength(30, ErrorMessage = "Maximo 30 caracteres")]
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         [Required(ErrorMessage = "PrecioCompra es obligatorio")]
         [StringLength(25, ErrorMessage = "Maximo 25 caracteres")]
@@ -41,25 +41,26 @@ namespace ClothingSystem.EntidadesDeNegocio
 
         [Required(ErrorMessage = "Estatus es obligatorio")]
         public byte Estatus { get; set; }
+
         [Display(Name = "Talla")]
-        public string Talla { get; set; }
+        public string? Talla { get; set; }
 
-        [Required(ErrorMessage = "Color es obligatorio")]
+        
         [StringLength(25, ErrorMessage = "Maximo 25 caracteres")]
-        public string Color { get; set; }
+        public string? Color { get; set; }
 
-        [Required(ErrorMessage = "Estilo es obligatorio")]
+        
         [StringLength(25, ErrorMessage = "Maximo 25 caracteres")]
-        public string Estilo { get; set; }
+        public string? Estilo { get; set; }
 
-        [Required(ErrorMessage = "Descripcion es obligatorio")]
+        
         [StringLength(25, ErrorMessage = "Maximo 25 caracteres")]
-        public string Descripcion { get; set; }
+        public string? Descripcion { get; set; }
 
-        [Required(ErrorMessage = "TipoTela es obligatorio")]
+        
         [StringLength(25, ErrorMessage = "Maximo 25 caracteres")]
 
-        public string TipoTela { get; set; }
+        public string? TipoTela { get; set; }
        
         public Marca Marca { get; set; }
         [NotMapped]
