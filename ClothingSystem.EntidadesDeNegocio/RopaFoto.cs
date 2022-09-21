@@ -21,7 +21,7 @@ namespace ClothingSystem.EntidadesDeNegocio
         [Required(ErrorMessage = "Url es obligatorio")]
         [StringLength(200, ErrorMessage = "Maximo 200 caracteres")]
         public string Url { get; set; }
-        public Ropa Ropa { get; set; }
+        public Ropa? Ropa { get; set; }
         [NotMapped]
         public int Top_Aux { get; set; }
        

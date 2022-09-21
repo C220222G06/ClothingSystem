@@ -63,7 +63,7 @@ namespace ClothingSystem.EntidadesDeNegocio
 
         public string? TipoTela { get; set; }
        
-        public Marca Marca { get; set; }
+        public Marca? Marca { get; set; }
         [NotMapped]
         public int Top_Aux { get; set; }
 
