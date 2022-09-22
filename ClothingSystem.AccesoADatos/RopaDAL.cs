@@ -31,9 +31,6 @@ namespace ClothingSystem.AccesoADatos
                 ropa.IdMarca = pRopa.IdMarca;
                 ropa.CodigoBarra = pRopa.CodigoBarra;
                 ropa.Nombre = pRopa.Nombre;
-                ropa.PrecioCompra = pRopa.PrecioCompra;
-                ropa.PrecioVenta = pRopa.PrecioVenta;
-                ropa.PrecioVenta = pRopa.PrecioVenta;
                 ropa.Existencia = pRopa.Existencia;
                 ropa.Estatus = pRopa.Estatus;
                 ropa.Talla = pRopa.Talla;
@@ -85,10 +82,6 @@ namespace ClothingSystem.AccesoADatos
                 pQuery = pQuery.Where(s => s.CodigoBarra.Contains(pRopa.CodigoBarra));
             if (!string.IsNullOrWhiteSpace(pRopa.Nombre))
                 pQuery = pQuery.Where(s => s.Nombre.Contains(pRopa.Nombre));
-            if (pRopa.PrecioCompra > 0)
-                pQuery = pQuery.Where(s => s.PrecioCompra == pRopa.PrecioCompra);
-            if (pRopa.PrecioVenta > 0)
-                pQuery = pQuery.Where(s => s.PrecioVenta == pRopa.PrecioVenta);
             if (pRopa.Existencia > 0)
                 pQuery = pQuery.Where(s => s.Existencia == pRopa.Existencia);
             if (pRopa.Estatus > 0)
@@ -132,4 +125,3 @@ namespace ClothingSystem.AccesoADatos
         }
     }
 }
-
