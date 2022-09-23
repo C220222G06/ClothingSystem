@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingSystem.UI.AppWebAsp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingSystem.PruebasUnitarias", "ClothingSystem.PruebasUnitarias\ClothingSystem.PruebasUnitarias.csproj", "{B1ED124E-B61D-481B-8243-84F4769FE93C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingSystem.WebAPI", "ClothingSystem.WebAPI\ClothingSystem.WebAPI.csproj", "{F5C49806-0DC5-4110-B678-8F6AC90765DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClothingSystem.WebAPI", "ClothingSystem.WebAPI\ClothingSystem.WebAPI.csproj", "{F5C49806-0DC5-4110-B678-8F6AC90765DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClothingSystem.AppBlazor", "ClothingSystem.AppBlazor\ClothingSystem.AppBlazor.csproj", "{21CB8E5C-DD50-43EE-B148-7A796ECA5E1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F5C49806-0DC5-4110-B678-8F6AC90765DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5C49806-0DC5-4110-B678-8F6AC90765DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5C49806-0DC5-4110-B678-8F6AC90765DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CB8E5C-DD50-43EE-B148-7A796ECA5E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CB8E5C-DD50-43EE-B148-7A796ECA5E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CB8E5C-DD50-43EE-B148-7A796ECA5E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CB8E5C-DD50-43EE-B148-7A796ECA5E1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

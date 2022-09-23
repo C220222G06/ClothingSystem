@@ -1,0 +1,42 @@
+﻿@page "/rol/index"
+@using ClothingSystem.EntidadesDeNegocio
+@inject HttpClient Http
+
+<PageTitle>Roles</PageTitle>
+
+<h1>Buscar</h1>
+
+@if (roles == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rol in roles)
+            {
+                <tr>
+                    <td>@rol.Nombre</td>                   
+                    <td>Modificar</td>
+                    <td>Eliminar</td>
+                    <td>ver</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    private Rol[]? roles;
+
+    protected override async Task OnInitializedAsync()
+    {
+        roles = await Http.GetFromJsonAsync<Rol[]>("Rol");
+    }
+}
