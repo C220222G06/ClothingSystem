@@ -29,6 +29,7 @@ namespace ClothingSystem.WebAPI.Controllers
         }
         //************************************************
         // GET: api/<UsuarioController>
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<Usuario>> Get()
         {
@@ -110,7 +111,7 @@ namespace ClothingSystem.WebAPI.Controllers
 
         }
         [HttpPost("Login")]
-        [AllowAnonymous]
+       
         public async Task<ActionResult> Login([FromBody] object pUsuario)
         {
 

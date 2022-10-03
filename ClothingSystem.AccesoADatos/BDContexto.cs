@@ -17,7 +17,7 @@ namespace ClothingSystem.AccesoADatos
         public DbSet<RopaFoto> RopaFoto { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-OOE8CFG\SQLEXPRESS;Initial Catalog=ClothingSystemdb;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"workstation id=ClothingSystemdb.mssql.somee.com;packet size=4096;user id=carlos1_SQLLogin_1;pwd=gniotvqytu;data source=ClothingSystemdb.mssql.somee.com;persist security info=False;initial catalog=ClothingSystemdb");
          // optionsBuilder.UseSqlServer(@"Data Source=MABA\SQLEXPRESS;Initial Catalog=ClothingSystemdb;Integrated Security=True");
         }
     }
