@@ -1,5 +1,60 @@
-﻿<h3>Ropas</h3>
+﻿@page "/ropas"
+@inject HttpClient Http
+@using ClothingSystem.EntidadesDeNegocio
+
+@code{
+
+}
+@if (ropas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdMarca</th>
+                <th>Id</th>
+                <th>CodigoBarra</th>
+                <th>Nombre</th>
+                <th>Existencia</th>
+                <th>Estatus</th>
+                <th>Talla</th>
+                <th>Color</th>
+                <th>Estilo</th>
+                <th>Descripcion</th>
+                <th>TipoTela</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ropa in ropas)
+            {
+                <tr>
+                    <td>@ropa.IdMarca</td>
+                    <td>@ropa.Id</td>
+                    <td>@ropa.CodigoBarra</td>
+                    <td>@ropa.Nombre</td>
+                    <td>@ropa.Existencia</td>
+                    <td>@ropa.Estatus</td>
+                    <td>@ropa.Talla</td>
+                    <td>@ropa.Color</td>
+                    <td>@ropa.Estilo</td>
+                    <td>@ropa.Descripcion</td>
+                    <td>@ropa.TipoTela</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
+    private Ropa[]? ropas;
 
+    protected override async Task OnInitializedAsync()
+    {
+        // https://localhost:44309/api/Ropa
+        ropas = await Http.GetFromJsonAsync<Ropa[]>("Ropa");
+    }
 }

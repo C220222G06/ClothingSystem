@@ -35,7 +35,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        // https://localhost:44309/api/Usuario
-        roles = await Http.GetFromJsonAsync<Rol[]>("Roles");
+        // https://localhost:44309/api/Rol
+        roles = await Http.GetFromJsonAsync<Rol[]>("Rol");
     }
 }

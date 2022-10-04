@@ -20,6 +20,7 @@ namespace ClothingSystem.WebAPI.Controllers
         private RopaBL ropaBL = new RopaBL();
 
         // GET: api/<RolController>
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<Ropa>> Get()
         {

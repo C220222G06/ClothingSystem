@@ -38,7 +38,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        // https://localhost:44309/api/Usuario
-        ropafotos = await Http.GetFromJsonAsync<RopaFoto[]>("RopaFotos");
+        // https://localhost:44309/api/RopaFotos
+        ropafotos = await Http.GetFromJsonAsync<RopaFoto[]>("RopaFoto");
     }
 }
