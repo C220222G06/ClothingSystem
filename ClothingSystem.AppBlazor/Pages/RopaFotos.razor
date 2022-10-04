@@ -1,6 +1,44 @@
 ﻿@page "/ropafotos"
-<h3>RopaFotos</h3>
+@inject HttpClient Http
+@using ClothingSystem.EntidadesDeNegocio
+
+
+@if (ropafotos == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdRopa</th>
+                <th>Id</th>
+                <th>Url</th>
+                <th>Estatus</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ropafoto in ropafotos)
+            {
+                <tr>
+                    <td>@ropafoto.IdRopa</td>
+                    <td>@ropafoto.Id</td>
+                    <td>@ropafoto.Url</td>
+                    <td>@ropafoto.Estatus</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
+    private RopaFoto[]? ropafotos;
 
+    protected override async Task OnInitializedAsync()
+    {
+        // https://localhost:44309/api/Usuario
+        ropafotos = await Http.GetFromJsonAsync<RopaFoto[]>("RopaFotos");
+    }
 }

@@ -15,12 +15,13 @@ namespace ClothingSystem.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize] // agregar el siguiente metadato para autorizar JWT la Web API
+   // [Authorize] // agregar el siguiente metadato para autorizar JWT la Web API
     public class RolController : ControllerBase
     {
         private RolBL rolBL = new RolBL();
 
         // GET: api/<RolController>
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<Rol>> Get()
         {

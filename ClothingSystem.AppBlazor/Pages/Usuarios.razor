@@ -1,6 +1,53 @@
 ﻿@page "/usuarios"
-<h3>Usuarios</h3>
+@inject HttpClient Http
+@using ClothingSystem.EntidadesDeNegocio
+
+@code{
+
+}
+@if (usuarios == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdRol</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Login</th>
+                <th>Estatus</th>
+                <th>FechaRegistro</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in usuarios)
+            {
+                <tr>
+                    <td>@usuario.IdRol</td>
+                    <td>@usuario.Id</td>
+                    <td>@usuario.Nombre</td>
+                    <td>@usuario.Apellido</td>
+                    <td>@usuario.Login</td>
+                    <td>@usuario.Estatus</td>
+                    <td>@usuario.FechaRegistro</td>
+                    <td>@usuario.Password</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
 @code {
+    private Usuario[]? usuarios;
 
+    protected override async Task OnInitializedAsync()
+    {
+        // https://localhost:44309/api/Usuario
+        usuarios = await Http.GetFromJsonAsync<Usuario[]>("Usuario");
+    }
 }
