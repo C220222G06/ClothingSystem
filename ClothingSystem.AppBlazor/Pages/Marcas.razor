@@ -1,5 +1,47 @@
-﻿<h3>Marcas</h3>
+﻿@page "/marcas"
+@inject HttpClient Http
+@using ClothingSystem.EntidadesDeNegocio
 
 @code {
 
+}
+@if (marcas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Estatus</th>
+                <th>Descripcion</th>
+                <th>PaisOrigen</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var marca in marcas)
+            {
+                <tr>
+                    <td>@marca.Id</td>
+                    <td>@marca.Nombre</td>
+                    <td>@marca.Estatus</td>
+                    <td>@marca.Descripcion</td>
+                    <td>@marca.PaisOrigen</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Marca[]? marcas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // https://localhost:44309/api/Rol
+        marcas = await Http.GetFromJsonAsync<Marca[]>("Marca");
+    }
 }

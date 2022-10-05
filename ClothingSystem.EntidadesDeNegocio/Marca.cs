@@ -23,9 +23,9 @@ namespace ClothingSystem.EntidadesDeNegocio
         public string? Descripcion { get; set; }
         [StringLength(60, ErrorMessage = "Maximo 60 caracteres")]
         public string? PaisOrigen { get; set; }
-
+        [NotMapped]
         public int Top_Aux { get; set; }
-        public List<Ropa> Ropa { get; set; }
+        public List<Ropa>? Ropa { get; set; }
     }
     public enum Estatus_Marca
     {

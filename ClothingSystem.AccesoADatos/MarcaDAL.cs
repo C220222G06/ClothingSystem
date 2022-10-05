@@ -27,10 +27,10 @@ namespace ClothingSystem.AccesoADatos
             {
                 var marca = await bdContexto.Marca.FirstOrDefaultAsync(s => s.Id == pMarca.Id);
                 Marca pmarca = new Marca();
-                marca.Nombre = pMarca.Nombre;
-                marca.Descripcion = pMarca.Descripcion;
-                marca.PaisOrigen = pMarca.PaisOrigen;
-                bdContexto.Update(marca);
+                //marca.Nombre = pMarca.Nombre;
+                //marca.Descripcion = pMarca.Descripcion;
+                //marca.PaisOrigen = pMarca.PaisOrigen;
+                //bdContexto.Update(marca);
                 result = await bdContexto.SaveChangesAsync();
             }
             return result;
@@ -70,15 +70,9 @@ namespace ClothingSystem.AccesoADatos
                 pQuery = pQuery.Where(s => s.Id == pMarca.Id);
             if (!string.IsNullOrWhiteSpace(pMarca.Nombre))
                 pQuery = pQuery.Where(s => s.Nombre.Contains(pMarca.Nombre));
-            if (!string.IsNullOrWhiteSpace(pMarca.Descripcion))
-                pQuery = pQuery.Where(s => s.Descripcion.Contains(pMarca.Descripcion));
-            if (!string.IsNullOrWhiteSpace(pMarca.PaisOrigen))
-                pQuery = pQuery.Where(s => s.PaisOrigen.Contains(pMarca.PaisOrigen));
-            if (pMarca.Estatus > 0)
-                pQuery = pQuery.Where(s => s.Estatus == pMarca.Estatus);
             pQuery = pQuery.OrderByDescending(s => s.Id).AsQueryable();
-            if (pMarca.Top_Aux > 0)
-                pQuery = pQuery.Take(pMarca.Top_Aux).AsQueryable();
+            //if (pMarca.Top_Aux > 0)
+            //    pQuery = pQuery.Take(pMarca.Top_Aux).AsQueryable();
             return pQuery;
         }
         public static async Task<List<Marca>> BuscarAsync(Marca pMarca)
