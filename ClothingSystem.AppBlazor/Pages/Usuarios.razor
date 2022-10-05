@@ -14,8 +14,8 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>IdRol</th>
                 <th>Id</th>
+                <th>IdRol</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Login</th>
@@ -28,8 +28,8 @@ else
             @foreach (var usuario in usuarios)
             {
                 <tr>
+                     <td>@usuario.Id</td>
                     <td>@usuario.IdRol</td>
-                    <td>@usuario.Id</td>
                     <td>@usuario.Nombre</td>
                     <td>@usuario.Apellido</td>
                     <td>@usuario.Login</td>
