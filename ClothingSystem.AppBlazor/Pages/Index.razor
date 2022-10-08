@@ -1,9 +1,120 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Index</PageTitle>@*Keyframes by https://animate.style/*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<style type="text/css">
 
-<center><h1>Bienvenido a ClothingSystem</h1></center>
+    .bounceIn {
+        opacity: 0;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+        animation-name: bounceIn;
+        animation-fill-mode: forwards;
+    }
 
-<center><p>es una aplicacion para subir fotos de ropa.</p></center>
+    .bounceOut {
+        animation-duration: 0.5s;
+        animation-name: bounceOut;
+        animation-fill-mode: forwards;
+    }
+
+    .backInDown {
+        opacity: 0;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+        animation-name: backInDown;
+        animation-fill-mode: forwards;
+    }
+
+    .backOutDown {
+        animation-duration: 0.5s;
+        animation-name: backOutDown;
+        animation-fill-mode: forwards;
+    }
+
+    .rotateIn {
+        opacity: 0;
+        animation-delay: 0.5s;
+        animation-duration: 0.5s;
+        animation-name: rotateIn;
+        animation-fill-mode: forwards;
+    }
+
+    .rotateOut {
+        animation-duration: 0.5s;
+        animation-name: rotateOut;
+        animation-fill-mode: forwards;
+    }
+</style>
+
+<MudCarousel Class="mud-width-full" Style="height:200px;" TData="object" AutoCycle="false">
+    <MudCarouselItem Color="@Color.Primary" Transition="Transition.Slide">
+        <div class="d-flex" style="height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Color="@Color.Secondary" Transition="Transition.Fade">
+        <div class="d-flex" style="height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Color="@Color.Tertiary" Transition="Transition.Custom" CustomTransitionEnter="bounceIn" CustomTransitionExit="bounceOut">
+        <div class="d-flex" style="height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="backInDown" CustomTransitionExit="backOutDown">
+        <div class="d-flex" style="background-color:lightgray; height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Primary" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Transition="Transition.Custom" CustomTransitionEnter="rotateIn" CustomTransitionExit="rotateOut">
+        <div class="d-flex" style="background-color:lightgray; height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Secondary" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+</MudCarousel>
+<br />
+<br />
+<br>
+  <main class="container"> 
+            <div class="row">
+                <center><div class="col l12 s12">
+                        <h1>Welcome</h1> 
+                        <span>Al sistema donde podrán organizar muy bien su ropa: talla, marca, tela y más!!</span> 
+                    </div></center>
+            </div>  
+            <br>
+
+            <center><div class="row">
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMGHMNME6gDHiiqakS03TbUzkbhrGnWti7pg&usqp=CAU" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbIVbja2uEy1iFqwNHGvmidYVSs4rz2B-Z9A&usqp=CAU" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfnnZfYUt0SXeii5tQoMsSpwKM0CD5_cZ5laPbhHAqOUwVoE4PvKomIYAHkKeoOP5stw0&usqp=CAU" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
 
 
+            </div></center>
+        </main>  
