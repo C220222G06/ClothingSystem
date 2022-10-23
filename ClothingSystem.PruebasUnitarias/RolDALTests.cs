@@ -30,7 +30,7 @@ namespace ClothingSystem.AccesoADatos.Tests
             rol.Id = rolInicial.Id;
             rol.Nombre = "Admin";
             int result = await RolDAL.ModificarAsync(rol);
-           
+
         }
 
         [TestMethod()]
@@ -39,7 +39,7 @@ namespace ClothingSystem.AccesoADatos.Tests
             var rol = new Rol();
             rol.Id = rolInicial.Id;
             var resultRol = await RolDAL.ObtenerPorIdAsync(rol);
-           
+
         }
 
         [TestMethod()]

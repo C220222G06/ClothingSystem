@@ -20,17 +20,14 @@ namespace ClothingSystem.AccesoADatos.Tests
         {
             var usuario = new Usuario();
             usuario.IdRol = usuarioInicial.IdRol;
-            usuario.Nombre = "Aministradorr";
-            usuario.Apellido = "juancho";
-            usuario.Login = "juanUser  ";
-            string password = "12345";
+            usuario.Nombre = "";
+            usuario.Apellido = "";
+            usuario.Login = "  ";
+            string password = "";
             usuario.Password = password;
             usuario.Estatus = (byte)Estatus_Usuario.INACTIVO;
             int result = await UsuarioDAL.CrearAsync(usuario);
             Assert.AreNotEqual(0, result);
-            usuarioInicial.Id = usuario.Id;
-            usuarioInicial.Password = password;
-            usuarioInicial.Login = usuario.Login;
         }
 
         [TestMethod()]
@@ -39,9 +36,9 @@ namespace ClothingSystem.AccesoADatos.Tests
             var usuario = new Usuario();
             usuario.Id = usuarioInicial.Id;
             usuario.IdRol = usuarioInicial.IdRol;
-            usuario.Nombre = "Adonay1B";
-            usuario.Apellido = "Lopez";
-            usuario.Login = "Adonay1B";
+            usuario.Nombre = "carlos";
+            usuario.Apellido = "Administrador";
+            usuario.Login = "carlos";
             usuario.Estatus = (byte)Estatus_Usuario.ACTIVO;
             int result = await UsuarioDAL.ModificarAsync(usuario);
             Assert.AreNotEqual(0, result);
@@ -67,9 +64,9 @@ namespace ClothingSystem.AccesoADatos.Tests
         {
             var usuario = new Usuario();
             usuario.IdRol = usuarioInicial.IdRol;
-            usuario.Nombre = "A";
-            usuario.Apellido = "a";
-            usuario.Login = "A";
+            usuario.Nombre = "";
+            usuario.Apellido = "";
+            usuario.Login = "";
             usuario.Estatus = (byte)Estatus_Usuario.ACTIVO;
             usuario.Top_Aux = 10;
             var resultUsuarios = await UsuarioDAL.BuscarAsync(usuario);
@@ -87,15 +84,15 @@ namespace ClothingSystem.AccesoADatos.Tests
             usuario.Top_Aux = 10;
             var resultUsuarios = await UsuarioDAL.BuscarIncluirRolesAsync(usuario);
             Assert.AreNotEqual(1, resultUsuarios.Count);
-            //var ultimoUsuario = resultUsuarios.FirstOrDefault();
-            //Assert.IsTrue(ultimoUsuario.Rol != null && usuario.IdRol == ultimoUsuario.Rol.Id);
+            var ultimoUsuario = resultUsuarios.FirstOrDefault();
+            Assert.IsTrue(ultimoUsuario.Rol != null && usuario.IdRol == ultimoUsuario.Rol.Id);
         }
         [TestMethod()]
         public async Task T7CambiarPasswordAsyncTest()
         {
             var usuario = new Usuario();
             usuario.Id = usuarioInicial.Id;
-            string passwordNuevo = "123456";
+            string passwordNuevo = "";
             usuario.Password = passwordNuevo;
             var result = await UsuarioDAL.CambiarPasswordAsync(usuario, usuarioInicial.Password);
             Assert.AreNotEqual(0, result);
@@ -111,6 +108,8 @@ namespace ClothingSystem.AccesoADatos.Tests
             Assert.AreEqual(usuario.Login, resultUsuario.Login);
         }
         [TestMethod()]
+
+
         public async Task T9EliminarAsyncTest()
         {
             var usuario = new Usuario();
