@@ -13,16 +13,16 @@ namespace ClothingSystem.AccesoADatos.Tests
     [TestClass()]
     public class RopaFotoDALTests
     {
-        private static RopaFoto ropafotoInicial = new RopaFoto { Id = 2 };  // Agregar un id existente en la base de datos 
+        private static RopaFoto ropafotoInicial = new RopaFoto { Id = 5, IdRopa = 4 };  // Agregar un id existente en la base de datos 
         [TestMethod()]
         public async Task T1CrearAsyncTest()
         {
             var ropafoto = new RopaFoto();
             ropafoto.IdRopa = ropafotoInicial.IdRopa;
-            ropafoto.Url = "heudherudhuehdue";
-            ropafoto.Estatus = (byte)Estatus_RopaFoto.INACTIVO;
+            ropafoto.Url = "heudh";
+            ropafoto.Estatus = (byte)Estatus_RopaFoto.ACTIVO;
             int result = await RopaFotoDAL.CrearAsync(ropafoto);
- //           Assert.AreNotEqual(0, result);
+            Assert.AreNotEqual(0, result);
             ropafotoInicial.Id = ropafoto.Id;
         }
 
@@ -35,7 +35,7 @@ namespace ClothingSystem.AccesoADatos.Tests
             ropafoto.Url = "heudherudhuehdue";
             ropafoto.Estatus = (byte)Estatus_RopaFoto.ACTIVO;
             int result = await RopaFotoDAL.ModificarAsync(ropafoto);
-//            Assert.AreNotEqual(0, result);
+            Assert.AreNotEqual(0, result);
         }
         [TestMethod()]
         public async Task T3ObtenerPorIdAsyncTest()
@@ -43,7 +43,7 @@ namespace ClothingSystem.AccesoADatos.Tests
             var ropafoto = new RopaFoto();
             ropafoto.Id = ropafotoInicial.Id;
             var resultRopaFoto = await RopaFotoDAL.ObtenerPorIdAsync(ropafoto);
-//            Assert.AreEqual(ropafoto.Id, resultRopaFoto.Id);
+            Assert.AreEqual(ropafoto.Id, resultRopaFoto.Id);
         }
         [TestMethod()]
         public async Task T4ObtenerTodosAsyncTest()
@@ -65,26 +65,26 @@ namespace ClothingSystem.AccesoADatos.Tests
         }
 
         [TestMethod()]
-        public async Task T6EliminarAsyncTest()
+        public async Task T6BuscarIncluirRopasAsyncTest()
+        {
+            var ropafoto = new RopaFoto();
+            ropafoto.IdRopa = ropafotoInicial.IdRopa;
+            ropafoto.Url = "A ";
+            ropafoto.Estatus = (byte)Estatus_RopaFoto.ACTIVO;
+            var resultRopaFotos = await RopaFotoDAL.BuscarIncluirRopasAsync(ropafoto);
+          //  Assert.AreNotEqual(0, resultRopaFotos.Count);
+            var ultimaRopaFoto = resultRopaFotos.FirstOrDefault();
+           // Assert.IsTrue(ultimaRopaFoto != null && ropafoto.IdRopa == ultimaRopaFoto.Ropa.Id);
+
+        }
+
+        [TestMethod()]
+        public async Task T73EliminarAsyncTest()
         {
             var ropafoto = new RopaFoto();
             ropafoto.Id = ropafotoInicial.Id;
             int result = await RopaFotoDAL.EliminarAsync(ropafoto);
             Assert.AreNotEqual(0, result);
-        }
-
-
-        [TestMethod()]
-        public async Task T7BuscarIncluirRopasAsyncTest()
-        {
-            var ropafoto = new RopaFoto();
-            RopaFoto ropaFoto = new RopaFoto();
-            ropafoto.IdRopa = ropafotoInicial.IdRopa;
-            ropafoto.Url = "A ";
-            ropafoto.Estatus = (byte)Estatus_RopaFoto.ACTIVO;
-            ropafoto.Top_Aux = 10;
-            var resultRopas = await RopaFotoDAL.BuscarIncluirRopasAsync(ropafoto);
-            Assert.AreNotEqual(1, resultRopas.Count);
         }
     }
 }
