@@ -17,7 +17,7 @@ namespace ClothingSystem.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    /*[Authorize]*/ // agregar el siguiente metadato para autorizar JWT la Web API
+    //[Authorize] // agregar el siguiente metadato para autorizar JWT la Web API
     public class UsuarioController : ControllerBase
     {
         private UsuarioBL usuarioBL = new UsuarioBL();
@@ -29,7 +29,7 @@ namespace ClothingSystem.WebAPI.Controllers
         }
         //************************************************
         // GET: api/<UsuarioController>
-        //[AllowAnonymous]
+       
         [HttpGet]
         public async Task<IEnumerable<Usuario>> Get()
         {
@@ -111,7 +111,7 @@ namespace ClothingSystem.WebAPI.Controllers
 
         }
         [HttpPost("Login")]
-       
+        [AllowAnonymous]
         public async Task<ActionResult> Login([FromBody] object pUsuario)
         {
 
