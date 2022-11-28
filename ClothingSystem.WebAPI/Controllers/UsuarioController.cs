@@ -29,7 +29,7 @@ namespace ClothingSystem.WebAPI.Controllers
         }
         //************************************************
         // GET: api/<UsuarioController>
-       
+      
         [HttpGet]
         public async Task<IEnumerable<Usuario>> Get()
         {
@@ -112,13 +112,16 @@ namespace ClothingSystem.WebAPI.Controllers
         }
         [HttpPost("Login")]
         [AllowAnonymous]
-        public async Task<ActionResult> Login([FromBody] object pUsuario)
+        public async Task<ActionResult> Login(string login , string password)
         {
 
-            var option = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            string strUsuario = JsonSerializer.Serialize(pUsuario);
-            Usuario usuario = JsonSerializer.Deserialize<Usuario>(strUsuario, option);
+            //var option = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            //string strUsuario = JsonSerializer.Serialize(pUsuario);
+            //Usuario usuario = JsonSerializer.Deserialize<Usuario>(strUsuario, option);
             // codigo para autorizar el usuario por JWT
+
+            //Usuario usuario_auth = await usuarioBL.LoginAsync(usuario);
+            var usuario = new Usuario { Login = login, Password = password };
             Usuario usuario_auth = await usuarioBL.LoginAsync(usuario);
             if (usuario_auth != null && usuario_auth.Id > 0 && usuario.Login == usuario_auth.Login)
             {
@@ -131,6 +134,8 @@ namespace ClothingSystem.WebAPI.Controllers
             }
             // *********************************************
         }
+        
+    
         [HttpPost("CambiarPassword")]
         public async Task<ActionResult> CambiarPassword([FromBody] Object pUsuario)
         {
