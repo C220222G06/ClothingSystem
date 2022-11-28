@@ -132,7 +132,7 @@ namespace ClothingSystem.WebAPI.Controllers
             {
                 return Unauthorized();
             }
-            // *********************************************
+            // ********************************************
         }
         
     
